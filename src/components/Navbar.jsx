@@ -97,6 +97,58 @@ export const Navbar = () => {
         <div className="fixed z-50 w-[100px] rounded-2xl flex-col top-0 left-0 h-screen dark:bg-[#1e2139] bg-[#3373b53]">
           <div className="h-full w-full flex flex-col justify-between">
             <img src={logo} alt="logo" className="relative " />
+
+            <div className="cursor-pointer">
+              {colorTheme === "light" ? (
+                <motion.img
+                  initial={{
+                    scale: 0.6,
+                    rotate: 90,
+                  }}
+                  animate={{
+                    scale: 1,
+                    rotate: 360,
+                    transition,
+                  }}
+                  whileTap={{
+                    scale: 0.9,
+                    rotate: 15,
+                  }}
+                  onClick={toggleDarkMode}
+                  src={moon}
+                  className="cursor-pointer ml-8 h-6"
+                />
+              ) : (
+                <motion.img
+                  initial={{
+                    rotate: 45,
+                  }}
+                  animate={{
+                    scale: 1,
+                    rotate: 360,
+                    transition,
+                  }}
+                  whileTap={{
+                    scale: 0.9,
+                    rotate: 15,
+                  }}
+                  onClick={toggleDarkMode}
+                  src={sun}
+                  className="cursor-pointer ml-8 h-6"
+                />
+              )}
+
+              <div className="w-[100px] border-dotted border-t border-[#494e6e] my-8 ">
+                {" "}
+              </div>
+              <div className="relative ml-5 mb-5">
+                <img
+                  src={profile}
+                  alt="profile"
+                  className="rounded-full h-[50px]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
